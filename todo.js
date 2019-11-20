@@ -18,8 +18,15 @@ class item {
         let itemBox = document.createElement('div');
         itemBox.classList.add('item');
 
+        let toDoDate = document.createElement('div');
+        toDoDate.classList.add('dateElement');
+        const date = new Date();
+        const dateText = date.getDate() + '-' + (date.getMonth() + 1) + '-' + date.getFullYear() + '\n' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+        toDoDate.innerText = dateText;
+
         container.appendChild(itemBox);
         itemBox.appendChild(input);
+        itemBox.appendChild(toDoDate);
 
 
 function check() {
